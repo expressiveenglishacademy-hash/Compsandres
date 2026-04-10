@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results | Comps HQ</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-page="results">
+  <main class="site-shell">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <div class="brand-mark">CH</div>
+        <div>
+          <div class="eyebrow">Premium Comps</div>
+          <h1 class="brand-title">Comps HQ</h1>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link" href="./index.html">Dashboard</a>
+        <a class="nav-link" href="./search.html">New Search</a>
+        <a class="nav-link" href="./history.html">History</a>
+      </nav>
+
+      <div class="sidebar-note">
+        Results are generated from your manual Zillow input and saved to local history in your browser.
+      </div>
+    </aside>
+
+    <section class="content">
+      <div id="resultsLoading" class="loading-stack">
+        <div class="loading-block tall"></div>
+        <div class="loading-grid">
+          <div class="loading-block"></div>
+          <div class="loading-block"></div>
+          <div class="loading-block"></div>
+        </div>
+        <div class="loading-block huge"></div>
+      </div>
+
+      <div id="resultsRoot" class="hidden"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
