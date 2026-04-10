@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comps HQ</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-page="home">
+  <main class="site-shell">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <div class="brand-mark">CH</div>
+        <div>
+          <div class="eyebrow">Premium Comps</div>
+          <h1 class="brand-title">Comps HQ</h1>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link active" href="./index.html">Dashboard</a>
+        <a class="nav-link" href="./search.html">New Search</a>
+        <a class="nav-link" href="./history.html">History</a>
+      </nav>
+
+      <div class="sidebar-note">
+        Manual Zillow workflow:
+        <br />
+        You find listings on Zillow, paste them here, and the site handles matching, scoring, summaries, and offers.
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="page-hero">
+        <div>
+          <div class="eyebrow">Dashboard</div>
+          <h2 class="page-title">Static Real Estate Comps Dashboard</h2>
+          <p class="page-subtitle">
+            GitHub Pages version with manual subject entry, manual Zillow data paste, matching logic, offer formulas, and saved history.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="./search.html">Start New Comp Search</a>
+          <a class="button button-secondary" href="./history.html">Open History</a>
+        </div>
+      </header>
+
+      <section class="section-grid three">
+        <article class="panel metric-panel">
+          <div class="metric-label">Workflow</div>
+          <div class="metric-value">Manual Zillow Import</div>
+          <p class="metric-text">Paste sold comps and active listings directly from your Zillow research.</p>
+        </article>
+
+        <article class="panel metric-panel">
+          <div class="metric-label">Offer Formula</div>
+          <div class="metric-value">Built In</div>
+          <p class="metric-text">Novation = Avg Sold × 0.94 - 40,000 and 60% Offer = Avg Sold × 0.60</p>
+        </article>
+
+        <article class="panel metric-panel">
+          <div class="metric-label">Storage</div>
+          <div class="metric-value">Local History</div>
+          <p class="metric-text">Saved in your browser so you can reopen old reports later.</p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">How It Works</div>
+            <h3 class="section-title">Use Zillow as the research source</h3>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div>
+              <h4>Enter the subject property</h4>
+              <p>Fill out the address, city, beds, baths, year built, and lot size manually.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div>
+              <h4>Paste sold comps and active listings</h4>
+              <p>Copy Zillow property details into the structured text boxes on the search page.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div>
+              <h4>Generate the report</h4>
+              <p>The site filters same city only, scores similarity, selects best matches, and calculates offers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
