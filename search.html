@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Search | Comps HQ</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-page="search">
+  <main class="site-shell">
+    <aside class="sidebar">
+      <div class="brand-card">
+        <div class="brand-mark">CH</div>
+        <div>
+          <div class="eyebrow">Premium Comps</div>
+          <h1 class="brand-title">Comps HQ</h1>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link" href="./index.html">Dashboard</a>
+        <a class="nav-link active" href="./search.html">New Search</a>
+        <a class="nav-link" href="./history.html">History</a>
+      </nav>
+
+      <div class="sidebar-note">
+        Required workflow:
+        <br />
+        1. Fill subject property
+        <br />
+        2. Paste sold comps
+        <br />
+        3. Paste active listings
+        <br />
+        4. Generate report
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="page-hero">
+        <div>
+          <div class="eyebrow">New Search</div>
+          <h2 class="page-title">Manual Zillow Comps Search</h2>
+          <p class="page-subtitle">
+            This static version uses manual Zillow research input. Paste sold and active properties, and the page will filter, score, rank, and calculate your offers.
+          </p>
+        </div>
+      </header>
+
+      <div id="searchAlert" class="alert hidden"></div>
+
+      <form id="searchForm" class="stack-lg">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">1. Subject Property</div>
+              <h3 class="section-title">Enter the subject manually</h3>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label for="fullAddress">Full Address</label>
+              <input id="fullAddress" name="fullAddress" type="text" required />
+            </div>
+            <div class="field">
+              <label for="streetName">Street Name</label>
+              <input id="streetName" name="streetName" type="text" required />
+            </div>
+            <div class="field">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" required />
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <input id="state" name="state" type="text" required />
+            </div>
+            <div class="field">
+              <label for="zipCode">Zip Code</label>
+              <input id="zipCode" name="zipCode" type="text" required />
+            </div>
+            <div class="field">
+              <label for="yearBuilt">Year Built</label>
+              <input id="yearBuilt" name="yearBuilt" type="number" required />
+            </div>
+            <div class="field">
+              <label for="bedrooms">Bedrooms</label>
+              <input id="bedrooms" name="bedrooms" type="number" required />
+            </div>
+            <div class="field">
+              <label for="bathrooms">Bathrooms</label>
+              <input id="bathrooms" name="bathrooms" type="number" step="0.5" required />
+            </div>
+            <div class="field">
+              <label for="lotSizeSqft">Lot Size (sqft)</label>
+              <input id="lotSizeSqft" name="lotSizeSqft" type="number" required />
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">2. Filters</div>
+              <h3 class="section-title">Sold date window and sort</h3>
+            </div>
+          </div>
+
+          <div class="form-grid compact">
+            <div class="field">
+              <label for="timeRange">Sold Date Window</label>
+              <select id="timeRange" name="timeRange">
+                <option value="LAST_6_MONTHS">Last 6 months</option>
+                <option value="LAST_12_MONTHS" selected>Last 12 months</option>
+                <option value="LAST_24_MONTHS">Last 24 months</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sortOrder">Sort Sold Comps</label>
+              <select id="sortOrder" name="sortOrder">
+                <option value="NEWEST_TO_OLDEST" selected>Newest to oldest</option>
+                <option value="OLDEST_TO_NEWEST">Oldest to newest</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">3. Sold Comps Input</div>
+              <h3 class="section-title">Paste sold Zillow properties</h3>
+            </div>
+          </div>
+
+          <p class="help-text">
+            One line per sold property:
+            <br />
+            <code>address | city | state | zip | soldPrice | soldDate(YYYY-MM-DD) | daysOnMarket | priceDrops | beds | baths | lotSizeSqft | yearBuilt</code>
+          </p>
+
+          <textarea
+            id="soldInput"
+            class="big-textarea"
+            placeholder="4101 San Marco Court, Sacramento, CA 95834 | Sacramento | CA | 95834 | 529000 | 2026-02-14 | 17 | 1 | 4 | 3 | 6200 | 2002"
+          ></textarea>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">4. Active Listings Input</div>
+              <h3 class="section-title">Paste active Zillow properties</h3>
+            </div>
+          </div>
+
+          <p class="help-text">
+            One line per active property:
+            <br />
+            <code>address | city | state | zip | listPrice | daysOnMarket | beds | baths | lotSizeSqft | yearBuilt | status</code>
+            <br />
+            Status must be <code>active</code> or <code>for-sale</code>.
+          </p>
+
+          <textarea
+            id="activeInput"
+            class="big-textarea"
+            placeholder="4178 Solstice Drive, Sacramento, CA 95834 | Sacramento | CA | 95834 | 539000 | 18 | 4 | 3 | 6500 | 2005 | active"
+          ></textarea>
+        </section>
+
+        <div class="form-actions">
+          <button class="button button-primary" type="submit">Generate Report</button>
+          <a class="button button-secondary" href="./index.html">Cancel</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
